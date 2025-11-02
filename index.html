@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Simple Site</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>My Simple Project1</h1>
+    <p class="lead">A basic website with HTML, CSS & JavaScript</p>
+  </header>
+
+  <main class="container">
+    <section id="about">
+      <h2>About</h2>
+      <p>This is a small demo site built for a project submission.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Form</h2>
+      <form id="contactForm">
+        <label>
+          Name
+          <input type="text" id="name" required />
+        </label>
+        <label>
+          Email
+          <input type="email" id="email" required />
+        </label>
+        <label>
+          Message
+          <textarea id="message" rows="4" required></textarea>
+        </label>
+        <button type="submit">Send</button>
+      </form>
+      <p id="formResult" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>YourName</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
