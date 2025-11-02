@@ -1,5 +1,5 @@
 const products = [
-  { id: 1, name: "Smartphone", price: 15000, category: "electronics", image: "https://via.placeholder.com/200" },
+  { id: 1, name: "Smartphone", price: 15000, category: "electronics", image: "https://rukminim2.flixcart.com/image/480/640/xif0q/mobile/v/a/b/-original-imahggexextjawug.jpeg?q=90" },
   { id: 2, name: "Laptop", price: 55000, category: "electronics", image: "https://via.placeholder.com/200" },
   { id: 3, name: "T-Shirt", price: 800, category: "clothing", image: "https://via.placeholder.com/200" },
   { id: 4, name: "Watch", price: 2500, category: "accessories", image: "https://via.placeholder.com/200" },
