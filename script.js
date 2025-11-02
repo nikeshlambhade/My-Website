@@ -1,25 +1,35 @@
-document.addEventListener('DOMContentLoaded', ()=> {
-  const form = document.getElementById('contactForm');
-  const result = document.getElementById('formResult');
+const products = [
+  { id: 1, name: "Smartphone", price: 15000, category: "electronics", image: "https://via.placeholder.com/200" },
+  { id: 2, name: "Laptop", price: 55000, category: "electronics", image: "https://via.placeholder.com/200" },
+  { id: 3, name: "T-Shirt", price: 800, category: "clothing", image: "https://via.placeholder.com/200" },
+  { id: 4, name: "Watch", price: 2500, category: "accessories", image: "https://via.placeholder.com/200" },
+  { id: 5, name: "Headphones", price: 2000, category: "electronics", image: "https://via.placeholder.com/200" },
+  { id: 6, name: "Jacket", price: 3000, category: "clothing", image: "https://via.placeholder.com/200" }
+];
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
+const productList = document.getElementById('product-list');
 
-    // Simple validation
-    if(!name || !email || !message){
-      result.textContent = 'Please fill all fields.';
-      result.style.color = 'crimson';
-      return;
-    }
-
-    // Simulate send (since no backend) and show Summary
-    result.style.color = 'green';
-    result.textContent = `Thanks ${name}! Your message was "sent" — (demo). We'll email you at ${email}.`;
-
-    // Reset after a short delay
-    setTimeout(() => form.reset(), 1200);
+function displayProducts(items) {
+  productList.innerHTML = "";
+  items.forEach(product => {
+    const div = document.createElement('div');
+    div.classList.add('product');
+    div.innerHTML = `
+      <img src="${product.image}" alt="${product.name}">
+      <h3>${product.name}</h3>
+      <p>₹${product.price}</p>
+    `;
+    productList.appendChild(div);
   });
-});
+}
+
+function filterCategory(category) {
+  if (category === 'all') {
+    displayProducts(products);
+  } else {
+    const filtered = products.filter(p => p.category === category);
+    displayProducts(filtered);
+  }
+}
+
+displayProducts(products);
